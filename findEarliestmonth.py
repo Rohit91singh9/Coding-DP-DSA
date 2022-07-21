@@ -12,7 +12,7 @@ def findEarliestmonth(stockPrice):
             month=len(l) 
             return month 
         stockPrice[1,3,2,3] 
-        print("Minimum dnanges in the month :",findEarliestmonth(stockPrice)) 
+        print("Minimum changes in the month :",findEarliestmonth(stockPrice)) 
 
 
 # This is complete logic of a Program
