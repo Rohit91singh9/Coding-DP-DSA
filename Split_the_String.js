@@ -52,3 +52,16 @@ function Split_the_String(S,k){
 console.log(Split_the_String("010100101",2));
 
 
+/*
+# This is complete logic of a Program in JavaScript
+# Remaining codes are in-built
+
+"""
+NOTE:
+
+    I completed this Assessment during Amazon Hackerrank 1st Round 
+
+    If you can figure out any other Approach to solve this problem, feel free to share me the Code
+    I would love to hear from you if you've cracked the Interview.
+    beingactual@gmail.com
+*/
