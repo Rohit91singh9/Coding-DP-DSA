@@ -37,6 +37,29 @@ def findEarliestMonth(stockPrice):
 print(findEarliestMonth([1,3,2,3]))
 
 
+#3rd Approach
+def findEarliestMonth(stockPrice): 
+    # Write your code here 
+    n = len(stockPrice) 
+    first = stockPrice[0] 
+    average_frst = math.floor(first) 
+    second = sum(stockPrice[1:]) 
+    average_scnd = math.floor(second/(n-1)) 
+    diff = abs(average_frst - average_scnd) 
+    result = 1 
+    for i in range(1, n-1): 
+        first+= stockPrice[i] 
+        second-= stockPrice[i] 
+        average_frst = math.floor(first/(i+1)) 
+        average_scnd = math.floor(second/(n-i-1)) 
+        difference_temp = abs(average_frst - average_scnd) 
+        if(difference_temp<diff): 
+            diff = difference_temp 
+            result = i+1 
+    return result 
+
+
+
 # This is complete logic of a Program
 # Remaining codes are in-built
 
