@@ -11,9 +11,9 @@ def findEarliestmonth(stockPrice):
         if(abs(avg1-avg2)<change): 
             change=abs(avg1-avg2) 
             month=len(l) 
-        return month 
+    return month 
     stockPrice[1,3,2,3] 
-    print("Minimum changes in the month :",findEarliestmonth(stockPrice)) 
+print("Minimum changes in the month :",findEarliestmonth(stockPrice)) 
 
 
 # 2nd Approach
