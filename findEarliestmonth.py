@@ -34,6 +34,7 @@ def findEarliestMonth(stockPrice):
             mini= abs(avg2-avg1)             
             month= i+1          
     return month
+print(findEarliestMonth([1,3,2,3]))
 
 
 # This is complete logic of a Program
