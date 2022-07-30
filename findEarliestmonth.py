@@ -58,7 +58,28 @@ def findEarliestMonth(stockPrice):
             result = i+1 
     return result 
 
+# 4th Approach
 
+#initialize month variable with 0
+    month=0
+    change=max(stockPrice)
+    #Create a list to hold values
+    l=[]
+    total_sum = 0
+    for i in range(len(stockPrice)):
+        total_sum+=stockPrice[i]
+    left = 0
+    left_sum = 0
+    while(len(stockPrice)>1):
+        left = stockPrice.pop(0)
+        l.append(left)
+        #Now calculate the average
+        left_sum += left
+        avg1=left_sum //len(l)
+        avg2=(total_sum-left_sum)//len(stockPrice)
+        
+        if(abs(avg1-avg2)
+           
 
 # This is complete logic of a Program
 # Remaining codes are in-built
