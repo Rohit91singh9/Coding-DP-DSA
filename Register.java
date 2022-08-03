@@ -1,3 +1,4 @@
+// 1st Approach:
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -64,3 +65,70 @@ public static List<String> implementAPI(List<String> logs) {
         System.out.print(implementAPI(logs));
     }
 }
+
+
+// 2nd Approach: 11/15 Test cases Passed
+/*
+import java.util.ArrayList; 
+import java.util.HashMap; 
+import java.util.List;  
+public class  Result {     
+    public static void main(String[] args) {          
+        String[] apis = { "register user05 qwerty", "login user05 qwerty", "logout user05"         };          
+        implementAPI(apis);      
+    }      public static void implementAPI(String[] logs) {         
+        String[] res = new String[logs.length];                
+        HashMap<String, List<String>> userNamePwdMap = new HashMap<>();          
+        for (int i = 0; i < logs.length; i++) {                          
+            String[] userInfo = logs[i].split(" ");                          
+            if (userInfo[0].equalsIgnoreCase("register")) 
+            {                               
+                if (userNamePwdMap.containsKey(userInfo[1])) {                     
+                    res[i] = "Username already exists";                 
+                } 
+                else 
+                {                                         
+                    List<String> list = new ArrayList<>();                     
+                    list.add(userInfo[2]);                     
+                    list.add("logged_out");                     
+                    userNamePwdMap.put(userInfo[1], list);                     
+                    res[i] = "Registered successfully";                 
+                }             
+            } 
+            else 
+            if (userInfo[0].equalsIgnoreCase("login")) 
+            {                 
+                if (userNamePwdMap.containsKey(userInfo[1])) {                                  
+                    if (userNamePwdMap.get(userInfo[1]).get(0).equals(userInfo[2]) &&                             
+                    userNamePwdMap.get(userInfo[1]).get(1).equalsIgnoreCase("logged_out")) {                         
+                        userNamePwdMap.get(userInfo[1]).set(1, "logged_in");                         
+                        res[i] = "Logged In Successfully";                     
+                    } 
+                    else 
+                    {                                                 
+                        res[i] = "Already Logged In";                     
+                    }                 
+                } else 
+                {                     
+                    res[i] = "Login Unsuccessful";                 
+                }             
+            } 
+            else 
+            if (userInfo[0].equalsIgnoreCase("logout")) {                                 
+                if (userNamePwdMap.containsKey(userInfo[1])                         
+                && userNamePwdMap.get(userInfo[1]).get(1).equalsIgnoreCase("logged_in")) {                     
+                    userNamePwdMap.get(userInfo[1]).set(1,"logged_out");                     
+                    res[i] = "Logged out Successfully";                 
+                } 
+                else 
+                {                     
+                    res[i] = "Logout Unsuccessful";                 
+                }             
+            }         
+        }          
+        for(int i=0;i< res.length;i++){             
+            System.out.print(res[i]+",");         
+        }         System.out.println();      
+    } 
+} 
+*/
