@@ -1,3 +1,34 @@
+# 1st Approach:
+
+def findMaximumSum(stockPrice, k):
+    # Write your code here
+    suml=[]
+    for i in range(0,len(stockPrice)-k):
+        if(len(set(stockPrice[i:i+k]))==k):
+            suml.append(sum(stockPrice[i:i+k]))
+        
+    if len(suml) == 0;
+        return -1
+        else:
+            return max(suml)
+        
+# 2nd Approach    
+
+def findMaximumSum(stockPrice, k):
+    # Write your code here
+    sumstockprice=[]
+    for i in range(0,len(stockPrice)-k):
+        if(len(set(stockPrice[i:i+k]))==k):
+            sumstockprice.append(sum(stockPrice[i:i+k]))
+        
+    if(len(sumstockprice) == 0;
+        return -1
+        else:
+           return max(sumstockprice)
+
+
+# 3nd Approach:
+
 def findMaximumSum(l,k):
     suml=[]
     for i in range(0,len(l)-k):
