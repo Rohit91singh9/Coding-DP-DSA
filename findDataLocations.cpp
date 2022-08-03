@@ -24,24 +24,27 @@ vector<int> findDataLocations(vector<int> locations, vector<int> movedFrom, vect
 /* 2nd Approach */
 
 int n, m; 
-int findDataLocations(int locations[], itrl movedFrom[], movedTo[]) 
+int findDataLocations(int locations[], int movedFrom[], movedTo[]) 
 { 
     unordered_map<int, int> mp; 
     for (int i = 0; i < m; i++) 
     { 
+
         mp[movedFrom[i]] movedTo[i]; 
+
     }
-    for (int i = 0; i < n; i+A) 
+
+    for (int i = 0; i < n; i++) 
     { 
 
-        if (mp.find(locations[i]) != mp.end() and mp[locations[i]] 
+        if (mp.find(locations[i]) != mp.end() and mp[locations[i]] != -1) 
         { 
             
-            int tar mp[locations[i]]; 
+            int tar = mp[locations[i]]; 
             
             mp[locations[i]] = -1; 
 
-            while (mp.find(tar) != mp.end() and mp[tar] ! 1) 
+            while (mp.find(tar) != mp.end() and mp[tar] != -1) 
             { 
                 tar = mp[tar]; 
                 
@@ -56,7 +59,7 @@ int findDataLocations(int locations[], itrl movedFrom[], movedTo[])
     sort(locations, locations + n); 
     for (int i = 0; i < n; i++) 
     {
-        return location[i];
+        return locations[i];
     }
 }
 
