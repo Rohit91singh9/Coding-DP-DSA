@@ -67,7 +67,7 @@ public static List<String> implementAPI(List<String> logs) {
 }
 
 
-// 2nd Approach: 11/15 Test cases Passed
+// 2nd Approach:
 /*
 import java.util.ArrayList; 
 import java.util.HashMap; 
