@@ -1,5 +1,8 @@
+/* 1st Approach */
+
 class Solution {
 public:
+// Write your code here
 vector<int> findDataLocations(vector<int> locations, vector<int> movedFrom, vector<int> movedTo) {
     set <int> ans; 
     for(int x:locations) ans.insert(x); 
@@ -15,6 +18,48 @@ vector<int> findDataLocations(vector<int> locations, vector<int> movedFrom, vect
     }
     return a; 
 }
+// int main()
+
+
+/* 2nd Approach */
+
+int n, m; 
+int findDataLocations(int locations[], itrl movedFrom[], movedTo[]) 
+{ 
+    unordered_map<int, int> mp; 
+    for (int i = 0; i < m; i++) 
+    { 
+        mp[movedFrom[i]] movedTo[i]; 
+    }
+    for (int i = 0; i < n; i+A) 
+    { 
+
+        if (mp.find(locations[i]) != mp.end() and mp[locations[i]] 
+        { 
+            
+            int tar mp[locations[i]]; 
+            
+            mp[locations[i]] = -1; 
+
+            while (mp.find(tar) != mp.end() and mp[tar] ! 1) 
+            { 
+                tar = mp[tar]; 
+                
+                mp[tar] = -1;
+            }
+
+            locations[i] = tar; 
+        }
+
+    }        
+    
+    sort(locations, locations + n); 
+    for (int i = 0; i < n; i++) 
+    {
+        return location[i];
+    }
+}
+
 
 /* NOTE:
 
