@@ -70,7 +70,7 @@ def findMaximumSum(stockPrice, k):
         if(len(set(stockPrice[i:i+k]))==k):
             suml.append(sum(stockPrice[i:i+k]))
         
-    if len(suml) == 0;
+    if len(suml) == 0:
         return -1
     else:
         return max(suml)
@@ -84,7 +84,7 @@ def findMaximumSum(stockPrice, k):
         if(len(set(stockPrice[i:i+k]))==k):
             sumstockprice.append(sum(stockPrice[i:i+k]))
         
-    if len(sumstockprice) == 0;
+    if len(sumstockprice) == 0:
         return -1
     else:
            return max(sumstockprice)
