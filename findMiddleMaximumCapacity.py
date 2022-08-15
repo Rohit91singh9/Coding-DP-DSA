@@ -1,3 +1,5 @@
+# APPROACH 1
+
 def findMiddleMaximumCapacity(capacity):
     max = 0
     for i in range(0, n - 2):
@@ -16,6 +18,21 @@ capacity = list(map(int, input().split(",")))
 # function calling
 res = findMiddleMaximumCapacity(capacity)
 print(res)
+
+
+# APPROACH 2
+
+def findMiddleMaximumCapacity(arr):    
+    output = -1
+    arr = sorted(list(enumerate(arr)), key=lambda pair: pair[1])
+
+    for end in range(len(arr)-1, -1, -1):
+        for middle in range(end-1, -1, -1):
+            if arr[end][1] % arr[middle][1] == 0:
+                for begin in range(middle-1, -1, -1):
+                    if arr[middle][1] % arr[begin][1] == 0 and arr[end][0] > arr[middle][0] > arr[begin][0]:
+                        return arr[middle][1]
+    return output
 
 
 # If any testcases fail let me know i will update as per the suitable approach.
