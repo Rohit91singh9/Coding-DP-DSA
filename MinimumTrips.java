@@ -1,3 +1,5 @@
+// Approach 1
+
     public static int getMinimumTrips(List<Integer> weights)
     {
         int size = weights.size();
@@ -29,3 +31,28 @@
     }
 }
 // please define the main method
+
+
+// Approach 2
+
+public static int getMinimumTrips(List<Integer> weights) {
+
+    Map<Integer,Integer> map = new HashMap<>();
+
+    for(int i : weights) {
+
+        map.put(i,map.getOrDefault(i,0)+1);
+    }
+
+    int cnt = 0;
+
+    for(int i : map.values()) {
+        if(i == 1) return -1;
+        else if(i == 2) cnt += 1;
+        else if(i%3 == 0) cnt += i/3;
+        else if((i+1)%3 == 0) cnt += (i+1)/3;
+        else if((i-1)%3 == 0) cnt += ((i-1)/3)+1;
+    }
+
+    return cnt;
+}
