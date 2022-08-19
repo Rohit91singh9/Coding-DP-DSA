@@ -1,3 +1,5 @@
+// Approach 1:
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -103,4 +105,60 @@ int main() {
     cout << getMaximumGreyness(pixels, n) << endl;
 
     return 0;
+}
+
+
+
+// Approach 2:
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    vector<string> pixels;
+    for (int i = 0; i < n; i++)
+    {
+        string s;
+        cin >> s;
+        pixels.push_back(s);
+    }
+    int m = pixels[0].size();
+    int row1[n];
+    int col1[m];
+    int cnt = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (pixels[i][j] == '1')
+                cnt++;
+        }
+        row1[i] = cnt;
+        cnt = 0;
+    }
+    for (int j = 0; j < m; j++)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            if (pixels[i][j] == '1')
+                cnt++;
+        }
+        col1[j] = cnt;
+        cnt = 0;
+    }
+    int mx = INT_MIN;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            int d = (2 * (row1[i] + col1[j])) - m - n;
+            mx = max(mx, d);
+            cout << d << " ";
+        }
+        cout << endl;
+    }
+    cout << "Maximum Greyness: " << mx;
+    cout << endl;
 }
