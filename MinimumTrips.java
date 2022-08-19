@@ -56,3 +56,26 @@ public static int getMinimumTrips(List<Integer> weights) {
 
     return cnt;
 }
+
+
+// Approach 3
+
+int n = weights.size();
+map<int,int> m;
+
+for(auto x:weights)
+        m[x]++;
+
+    int res = 0;
+    for(auto x:m){
+
+        int cnt = x.second;
+        if(cnt == 1)
+            return -1;
+
+        res+=(cnt/3 + (cnt%3!=0));
+
+    }
+
+    return res;
+
