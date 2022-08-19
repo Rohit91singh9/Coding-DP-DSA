@@ -32,7 +32,7 @@ public static int countMaximumOperations(String s, String t) {
         result = Math.min(result, currentCount / requiredCount);
     }
 
-    return result == Integer.MAX_VALUE ? -1 : 0;
+    return result == Integer.MAX_VALUE ? -1 : result;
 }
 
 
@@ -69,7 +69,7 @@ public static int countMaxOperations(String s, String t) {
             result = Math.min(result, currentCount / requiredCount);
         }
 
-        return result == Integer.MAX_VALUE ? -1 : 0;
+        return result == Integer.MAX_VALUE ? -1 : result;
     }
  */
 
