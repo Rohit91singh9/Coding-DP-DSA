@@ -1,4 +1,4 @@
-/* 1st Approach */
+/* Approach 1 */
 
 class Solution {
 public:
@@ -19,9 +19,50 @@ vector<int> findDataLocations(vector<int> locations, vector<int> movedFrom, vect
     return a; 
 }
 // int main()
+    
+/* Approach 2 */
 
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    int m;
+    cin >> m;
+    int from[m], to[m];
+    for (int i = 0; i < m; i++)
+        cin >> from[i];
 
-/* 2nd Approach */
+    for (int i = 0; i < m; i++)
+        cin >> to[i];
+
+    map<int, int> mp;
+    for (int i = 0; i < n; i++)
+    {
+        mp[arr[i]] = 1;
+    }
+
+    for (int i = 0; i < m; i++)
+    {
+        if (mp.find(from[i]) != mp.end())
+        {
+            mp[from[i]] = 0;
+        }
+        mp[to[i]] = 1;
+    }
+    for (auto x : mp)
+    {
+        if (x.second == 1)
+            cout << x.first << " ";
+    }
+    cout << endl;
+}
+
+/* Approach 3 */
 
 int n, m; 
 int findDataLocations(int locations[], int movedFrom[], movedTo[]) 
