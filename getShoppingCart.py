@@ -1,3 +1,27 @@
+# Approach 1
+
+def getShopingCart(head,queries):
+    if queries=='POP_HEAD':
+        head=head.next
+        return head
+    if queries=='PUSH_HEAD':
+        y=head 
+        head.insert_node(head_item)
+        y.next=head
+        return y 
+    if queries=="PUSH_TAIL":
+        y=head 
+        if head==None:
+            head.next=head.insert_node(head_item) 
+        else:
+            while y.next!=None:
+                y=y.next 
+            y.next=head.insert_node(head_item) 
+        return head
+
+
+# Approach 2
+
 class Node:    # Create Node Class
     def __init__(self, value=None):
         self.value = value
